@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Card, { CardContent, CardHeader, CardTitle } from '../components/ui/Card';
+import Card, { CardContent } from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import StatusBadge from '../components/ui/StatusBadge';
 import { useWallet } from '../context/WalletContext';

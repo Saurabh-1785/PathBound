@@ -14,7 +14,12 @@ const axios = require('axios');
 const StellarSdk = require('@stellar/stellar-sdk');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: [
+        'http://localhost:5173',
+        'https://pathbound.vercel.app'
+    ]
+}));
 app.use(express.json());
 
 // Configuration

@@ -39,7 +39,7 @@ export default function CurrencySelector({
                     <div className="flex items-center gap-3">
                         {value ? (
                             <>
-                                <span className="text-2xl">{getCurrencyFlag(value.code)}</span>
+                                <CurrencyIcon code={value.code} className="w-8 h-8" />
                                 <div>
                                     <div className="text-pb-text-primary font-medium">{value.code}</div>
                                     <div className="text-pb-text-muted text-xs">{value.name}</div>
@@ -76,7 +76,7 @@ export default function CurrencySelector({
                   ${value?.code === currency.code ? 'bg-pb-accent-glow' : ''}
                 `}
                             >
-                                <span className="text-2xl">{getCurrencyFlag(currency.code)}</span>
+                                <CurrencyIcon code={currency.code} className="w-8 h-8" />
                                 <div>
                                     <div className="text-pb-text-primary font-medium">{currency.code}</div>
                                     <div className="text-pb-text-muted text-xs">{currency.name}</div>
@@ -95,7 +95,25 @@ export default function CurrencySelector({
     );
 }
 
-function getCurrencyFlag(code: string): string {
+// Currency icon component that uses SVG files for crypto assets
+export function CurrencyIcon({ code, className = "w-8 h-8" }: { code: string; className?: string }) {
+    const cryptoIcons: Record<string, string> = {
+        XLM: '/stellar-xlm-logo.svg',
+        USDC: '/usdc.svg',
+        EURC: '/eurc.svg',
+    };
+
+    if (cryptoIcons[code]) {
+        return (
+            <img
+                src={cryptoIcons[code]}
+                alt={code}
+                className={className}
+            />
+        );
+    }
+
+    // Fallback to emoji flags for fiat currencies
     const flags: Record<string, string> = {
         USD: '🇺🇸',
         EUR: '🇪🇺',
@@ -105,7 +123,6 @@ function getCurrencyFlag(code: string): string {
         MXN: '🇲🇽',
         BRL: '🇧🇷',
         GBP: '🇬🇧',
-        XLM: '⭐',
     };
-    return flags[code] || '🌐';
+    return <span className="text-2xl">{flags[code] || '🌐'}</span>;
 }

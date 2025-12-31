@@ -11,6 +11,7 @@ import {
     formatPublicKey
 } from '../services/stellar';
 import { submitIntent, checkServiceHealth } from '../services/api';
+import { CurrencyIcon } from '../components/CurrencySelector';
 
 interface PendingIntent {
     amount: string;
@@ -175,12 +176,6 @@ export default function ReviewSign() {
             </div>
         );
     }
-
-    const flags: Record<string, string> = {
-        USD: '🇺🇸', EUR: '🇪🇺', INR: '🇮🇳', PHP: '🇵🇭', NGN: '🇳🇬', GBP: '🇬🇧',
-        XLM: '⭐', USDC: '💵', EURC: '💶'
-    };
-
     return (
         <div className="min-h-screen py-12 px-6">
             <div className="max-w-3xl mx-auto space-y-6">
@@ -200,7 +195,7 @@ export default function ReviewSign() {
                     <CardContent>
                         <div className="flex items-center justify-center gap-8 py-6">
                             <div className="text-center">
-                                <div className="text-3xl mb-2">{flags[pendingIntent.sourceCurrency.code] || '🌐'}</div>
+                                <div className="mb-2 flex justify-center"><CurrencyIcon code={pendingIntent.sourceCurrency.code} className="w-10 h-10" /></div>
                                 <div className="font-mono text-2xl text-pb-text-primary">
                                     {parseFloat(pendingIntent.amount).toLocaleString()} {pendingIntent.sourceCurrency.code}
                                 </div>
@@ -215,7 +210,7 @@ export default function ReviewSign() {
                                 </div>
                             </div>
                             <div className="text-center">
-                                <div className="text-3xl mb-2">{flags[pendingIntent.destCurrency.code] || '🌐'}</div>
+                                <div className="mb-2 flex justify-center"><CurrencyIcon code={pendingIntent.destCurrency.code} className="w-10 h-10" /></div>
                                 <div className="font-mono text-2xl text-pb-status-success">
                                     ≥{(parseFloat(pendingIntent.amount) * parseFloat(pendingIntent.minRate)).toLocaleString(undefined, { maximumFractionDigits: 4 })} {pendingIntent.destCurrency.code}
                                 </div>

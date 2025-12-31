@@ -14,12 +14,12 @@ export default {
                     tertiary: '#1A1A24',
                     elevated: '#1E1E2A',
                 },
-                // Accent colors - purple/blue inspired by Stellar Lab
+                // Accent colors - purple/blue inspired by Stellar Lab (brighter/shinier)
                 'pb-accent': {
-                    primary: '#6366F1',
-                    secondary: '#8B5CF6',
-                    muted: '#4F46E5',
-                    glow: 'rgba(99, 102, 241, 0.15)',
+                    primary: '#7C83F4',
+                    secondary: '#4d29b7ff',
+                    muted: '#5A5DE8',
+                    glow: 'rgba(53, 58, 152, 0.22)',
                 },
                 // Text colors
                 'pb-text': {
@@ -39,9 +39,9 @@ export default {
                 },
                 // Border colors
                 'pb-border': {
-                    subtle: 'rgba(255, 255, 255, 0.06)',
-                    default: 'rgba(255, 255, 255, 0.1)',
-                    focus: 'rgba(99, 102, 241, 0.5)',
+                    subtle: 'rgba(255, 255, 255, 0.08)',
+                    default: 'rgba(255, 255, 255, 0.12)',
+                    focus: 'rgba(129, 140, 248, 0.6)',
                 },
             },
             fontFamily: {
@@ -49,9 +49,9 @@ export default {
                 mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
             },
             boxShadow: {
-                'glow-sm': '0 0 10px rgba(99, 102, 241, 0.15)',
-                'glow-md': '0 0 20px rgba(99, 102, 241, 0.2)',
-                'glow-lg': '0 0 30px rgba(99, 102, 241, 0.25)',
+                'glow-sm': '0 0 12px rgba(129, 140, 248, 0.25)',
+                'glow-md': '0 0 25px rgba(129, 140, 248, 0.35)',
+                'glow-lg': '0 0 40px rgba(129, 140, 248, 0.45)',
                 'card': '0 4px 24px rgba(0, 0, 0, 0.4)',
             },
             borderRadius: {
@@ -64,8 +64,8 @@ export default {
             },
             keyframes: {
                 glow: {
-                    '0%': { boxShadow: '0 0 5px rgba(99, 102, 241, 0.2)' },
-                    '100%': { boxShadow: '0 0 20px rgba(99, 102, 241, 0.4)' },
+                    '0%': { boxShadow: '0 0 8px rgba(129, 140, 248, 0.3)' },
+                    '100%': { boxShadow: '0 0 25px rgba(129, 140, 248, 0.6)' },
                 },
             },
         },

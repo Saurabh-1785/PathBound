@@ -33,14 +33,13 @@ export default function Landing() {
                         </div>
 
                         <h1 className="text-5xl md:text-6xl font-bold text-pb-text-primary mb-6 leading-tight">
-                            Lock Your Rate.
+                            Your Rate.
                             <br />
-                            <span className="text-gradient">Or Do Nothing.</span>
+                            <span className="text-gradient">Your Rules.</span>
                         </h1>
 
                         <p className="text-xl text-pb-text-secondary mb-8 max-w-2xl mx-auto">
-                            Rate-protected currency exchange for emerging markets. Set your acceptable FX rate,
-                            define a time window, and let the Stellar network execute—or safely expire.
+                            A simple way to exchange currency without bad rates. You choose the rate and the time, Stellar handles the rest, or nothing happens.
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -73,8 +72,7 @@ export default function Landing() {
                                 FX Volatility Destroys Value
                             </h2>
                             <p className="text-pb-text-secondary max-w-2xl mx-auto">
-                                For families sending remittances, a $10 rate swing can cost 5% of a $200 transfer.
-                                Traditional solutions force you to accept market rates—or gamble on timing.
+                                For families sending money home, a small FX swing can wipe out up to 5% of a $200 transfer—without warning.
                             </p>
                         </div>
 
@@ -88,7 +86,7 @@ export default function Landing() {
                                     </div>
                                     <h3 className="text-lg font-semibold text-pb-text-primary mb-2">Rate Uncertainty</h3>
                                     <p className="text-sm text-pb-text-secondary">
-                                        You never know what rate you'll get when converting between currencies.
+                                        You don’t know the exchange rate until the transfer executes. Even a small change can cut into rent, food, or school money.
                                     </p>
                                 </CardContent>
                             </Card>
@@ -102,7 +100,7 @@ export default function Landing() {
                                     </div>
                                     <h3 className="text-lg font-semibold text-pb-text-primary mb-2">Timing Pressure</h3>
                                     <p className="text-sm text-pb-text-secondary">
-                                        Markets move fast. Waiting for "the right rate" often means missing it.
+                                        Rates change by the minute. Waiting for a better rate often means missing it—or being forced to convert at a worse one.
                                     </p>
                                 </CardContent>
                             </Card>
@@ -116,10 +114,43 @@ export default function Landing() {
                                     </div>
                                     <h3 className="text-lg font-semibold text-pb-text-primary mb-2">Custodial Risk</h3>
                                     <p className="text-sm text-pb-text-secondary">
-                                        Traditional limit orders require trusting exchanges with your funds.
+                                        Traditional limit orders require handing over your money and trusting an exchange to act fairly.
                                     </p>
                                 </CardContent>
                             </Card>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Why PathBound */}
+                <section className="relative py-16 px-6">
+                    <div className="max-w-4xl mx-auto text-center">
+                        <div className="inline-flex items-center gap-3 bg-gradient-to-r from-pb-accent-primary/10 to-pb-accent-secondary/10 border border-pb-accent-primary/20 rounded-2xl px-8 py-6">
+                            <svg className="w-8 h-8 text-pb-accent-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <div className="text-left">
+                                <h3 className="text-xl font-bold text-pb-text-primary mb-1">
+                                    Why PathBound?
+                                </h3>
+                                <p className="text-pb-text-secondary">
+                                    PathBound fixes all three—<span className="text-pb-accent-primary font-medium">without custody</span>, <span className="text-pb-accent-primary font-medium">without guessing</span>, and <span className="text-pb-accent-primary font-medium">without forcing bad timing</span>.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="mt-8 grid sm:grid-cols-3 gap-4 text-sm">
+                            <div className="bg-pb-bg-secondary/50 rounded-xl p-4 border border-pb-border-subtle">
+                                <span className="text-pb-status-success font-semibold">You set the rate.</span>
+                                <p className="text-pb-text-muted mt-1">No surprises. If the market doesn't meet it, nothing happens.</p>
+                            </div>
+                            <div className="bg-pb-bg-secondary/50 rounded-xl p-4 border border-pb-border-subtle">
+                                <span className="text-pb-status-success font-semibold">You control the timing.</span>
+                                <p className="text-pb-text-muted mt-1">Pick a window that works for you—1 hour to 7 days.</p>
+                            </div>
+                            <div className="bg-pb-bg-secondary/50 rounded-xl p-4 border border-pb-border-subtle">
+                                <span className="text-pb-status-success font-semibold">Your keys, your funds.</span>
+                                <p className="text-pb-text-muted mt-1">No middleman. Stellar executes directly from your wallet.</p>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -334,75 +365,6 @@ export default function Landing() {
                     </div>
                 </section>
 
-                {/* Trust Model */}
-                <section className="relative py-20 px-6">
-                    <div className="absolute inset-0 bg-pb-bg-secondary/30 backdrop-blur-sm" />
-                    <div className="relative max-w-4xl mx-auto">
-                        <div className="text-center mb-12">
-                            <h2 className="text-3xl font-bold text-pb-text-primary mb-4">
-                                Why Your Funds Are Safe
-                            </h2>
-                        </div>
-
-                        <div className="grid gap-4">
-                            <Card className="flex items-start gap-4 p-6">
-                                <div className="w-10 h-10 rounded-lg bg-pb-status-success/15 flex items-center justify-center flex-shrink-0">
-                                    <svg className="w-5 h-5 text-pb-status-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold text-pb-text-primary mb-1">Non-Custodial</h3>
-                                    <p className="text-sm text-pb-text-secondary">
-                                        Your wallet holds your funds at all times. We only construct transactions—you sign them.
-                                    </p>
-                                </div>
-                            </Card>
-
-                            <Card className="flex items-start gap-4 p-6">
-                                <div className="w-10 h-10 rounded-lg bg-pb-status-success/15 flex items-center justify-center flex-shrink-0">
-                                    <svg className="w-5 h-5 text-pb-status-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold text-pb-text-primary mb-1">Atomic Execution</h3>
-                                    <p className="text-sm text-pb-text-secondary">
-                                        Stellar's path payments execute fully or not at all. No partial fills, no stuck funds.
-                                    </p>
-                                </div>
-                            </Card>
-
-                            <Card className="flex items-start gap-4 p-6">
-                                <div className="w-10 h-10 rounded-lg bg-pb-status-success/15 flex items-center justify-center flex-shrink-0">
-                                    <svg className="w-5 h-5 text-pb-status-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold text-pb-text-primary mb-1">Time-Bounded Safety</h3>
-                                    <p className="text-sm text-pb-text-secondary">
-                                        Expired transactions are automatically rejected by the Stellar network. Expiry = safe failure.
-                                    </p>
-                                </div>
-                            </Card>
-
-                            <Card className="flex items-start gap-4 p-6">
-                                <div className="w-10 h-10 rounded-lg bg-pb-status-success/15 flex items-center justify-center flex-shrink-0">
-                                    <svg className="w-5 h-5 text-pb-status-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold text-pb-text-primary mb-1">Backend Independence</h3>
-                                    <p className="text-sm text-pb-text-secondary">
-                                        If our servers go down, your signed transactions continue processing on the Stellar network.
-                                    </p>
-                                </div>
-                            </Card>
-                        </div>
-                    </div>
-                </section>
 
                 {/* CTA Section */}
                 <section className="relative py-24 px-6">

@@ -5,6 +5,7 @@ import Button from '../components/ui/Button';
 import StatusBadge from '../components/ui/StatusBadge';
 import { useWallet } from '../context/WalletContext';
 import { IntentStatus, Currency } from '../types';
+import { CurrencyIcon } from '../components/CurrencySelector';
 
 interface StoredIntent {
     id: string;
@@ -59,11 +60,6 @@ export default function History() {
         window.addEventListener('storage', loadIntents);
         return () => window.removeEventListener('storage', loadIntents);
     }, [publicKey]);
-
-    const flags: Record<string, string> = {
-        USD: '🇺🇸', EUR: '🇪🇺', INR: '🇮🇳', PHP: '🇵🇭', NGN: '🇳🇬', GBP: '🇬🇧',
-        XLM: '⭐', USDC: '💵', EURC: '💶'
-    };
 
     const formatDate = (timestamp: number) => {
         return new Date(timestamp).toLocaleDateString('en-US', {
@@ -171,7 +167,7 @@ export default function History() {
                                             {/* Left: Currency pair */}
                                             <div className="flex items-center gap-4">
                                                 <div className="flex items-center gap-2">
-                                                    <span className="text-xl">{flags[intent.sourceCurrency.code] || '🌐'}</span>
+                                                    <CurrencyIcon code={intent.sourceCurrency.code} className="w-6 h-6" />
                                                     <span className="font-mono font-medium text-pb-text-primary">
                                                         {parseFloat(intent.amount).toLocaleString()} {intent.sourceCurrency.code}
                                                     </span>
@@ -180,7 +176,7 @@ export default function History() {
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                                 </svg>
                                                 <div className="flex items-center gap-2">
-                                                    <span className="text-xl">{flags[intent.destCurrency.code] || '🌐'}</span>
+                                                    <CurrencyIcon code={intent.destCurrency.code} className="w-6 h-6" />
                                                     <span className="font-mono text-pb-text-secondary">{intent.destCurrency.code}</span>
                                                 </div>
                                             </div>

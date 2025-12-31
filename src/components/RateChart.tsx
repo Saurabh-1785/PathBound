@@ -261,9 +261,9 @@ export default function RateChart({ sourceCurrency, destCurrency, targetRate }: 
                         <svg className="w-5 h-5 text-pb-accent-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
                         </svg>
-                        Market Chart
+                        Market Rate
                         <span className="text-xs font-normal text-pb-status-success bg-pb-status-success/10 px-2 py-0.5 rounded-full">
-                            📡 Live
+                            Live
                         </span>
                     </CardTitle>
                     <div className="flex gap-1">

@@ -7,6 +7,7 @@ import { IntentStatus as IntentStatusType, Currency } from '../types';
 import { checkTransactionStatus } from '../services/stellar';
 import { getIntentStatus as getMonitoringStatus } from '../services/api';
 import { useWallet } from '../context/WalletContext';
+import { CurrencyIcon } from '../components/CurrencySelector';
 
 interface StoredIntent {
     id: string;
@@ -186,13 +187,6 @@ export default function IntentStatus() {
             </div>
         );
     }
-
-    const flags: Record<string, string> = {
-        USD: '🇺🇸', EUR: '🇪🇺', INR: '🇮🇳', PHP: '🇵🇭', NGN: '🇳🇬', GBP: '🇬🇧',
-        XLM: '⭐', USDC: '💵', EURC: '💶'
-    };
-
-
     const stellarExpertLink = intent.transactionHash
         ? `https://stellar.expert/explorer/testnet/tx/${intent.transactionHash}`
         : null;
@@ -247,8 +241,8 @@ export default function IntentStatus() {
                                 <div>
                                     <p className="text-xs text-pb-text-muted mb-1">Difference</p>
                                     <p className={`font-mono text-xl ${currentMarketRate && currentMarketRate >= parseFloat(intent.minRate)
-                                            ? 'text-pb-status-success'
-                                            : 'text-pb-status-warning'
+                                        ? 'text-pb-status-success'
+                                        : 'text-pb-status-warning'
                                         }`}>
                                         {currentMarketRate
                                             ? `${((currentMarketRate - parseFloat(intent.minRate)) / parseFloat(intent.minRate) * 100).toFixed(2)}%`
@@ -271,7 +265,7 @@ export default function IntentStatus() {
                     <CardContent className="py-6">
                         <div className="flex items-center justify-center gap-8">
                             <div className="text-center">
-                                <div className="text-2xl mb-1">{flags[intent.sourceCurrency.code] || '🌐'}</div>
+                                <div className="mb-1 flex justify-center"><CurrencyIcon code={intent.sourceCurrency.code} className="w-8 h-8" /></div>
                                 <div className="font-mono text-xl text-pb-text-primary">
                                     {parseFloat(intent.amount).toLocaleString()} {intent.sourceCurrency.code}
                                 </div>
@@ -281,7 +275,7 @@ export default function IntentStatus() {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                             <div className="text-center">
-                                <div className="text-2xl mb-1">{flags[intent.destCurrency.code] || '🌐'}</div>
+                                <div className="mb-1 flex justify-center"><CurrencyIcon code={intent.destCurrency.code} className="w-8 h-8" /></div>
                                 <div className="font-mono text-xl text-pb-text-primary">{intent.destCurrency.code}</div>
                                 <div className="text-xs text-pb-text-muted">{intent.destCurrency.name}</div>
                             </div>

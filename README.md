@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/Vite-5.0-646CFF?style=for-the-badge&logo=vite" alt="Vite">
 </p>
 
-# 🚀 PathBound
+# PathBound
 
 > **Limit orders for remittances** — Rate-protected currency exchange for emerging markets, built on Stellar.
 
@@ -13,7 +13,7 @@ PathBound is a **non-custodial** decentralized application that empowers users t
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Key Features](#-key-features)
@@ -30,7 +30,7 @@ PathBound is a **non-custodial** decentralized application that empowers users t
 
 ---
 
-## 🌟 Overview
+## Overview
 
 Traditional currency exchange often leaves users vulnerable to unfavorable rates, especially in emerging markets where FX volatility can significantly impact remittance values. PathBound solves this by leveraging Stellar's native path payments to create **rate-protected** exchange intents.
 
@@ -51,7 +51,7 @@ PathBound allows users to:
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 | Feature | Description |
 |---------|-------------|
@@ -67,7 +67,7 @@ PathBound allows users to:
 
 ---
 
-## 🔄 How It Works
+## How It Works
 
 ```mermaid
 flowchart LR
@@ -167,7 +167,7 @@ VITE_NETWORK_PASSPHRASE=Test SDF Network ; September 2015
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 PathBound/
@@ -214,7 +214,7 @@ PathBound/
 
 ---
 
-## 📄 Pages & Components
+## Pages & Components
 
 ### Pages
 
@@ -242,7 +242,7 @@ PathBound/
 
 ---
 
-## 🔗 Stellar Integration
+## Stellar Integration
 
 ### Core Functionality: `path_payment_strict_receive`
 
@@ -285,7 +285,7 @@ The `stellar.ts` service provides:
 
 ---
 
-## 🔐 Trust Model & Security
+## Trust Model & Security
 
 ### Why PathBound is Safe
 
@@ -320,7 +320,7 @@ The `stellar.ts` service provides:
 
 ---
 
-## 🎨 Design System
+## Design System
 
 ### Color Palette
 
@@ -345,7 +345,7 @@ The `stellar.ts` service provides:
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please follow these steps:
 
@@ -364,7 +364,7 @@ We welcome contributions! Please follow these steps:
 
 ---
 
-## 📄 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
 
@@ -377,3 +377,4 @@ This project is open source and available under the [MIT License](LICENSE).
     <img src="https://img.shields.io/badge/Powered%20by-Stellar-purple?style=flat-square" alt="Powered by Stellar">
   </a>
 </p>
+
